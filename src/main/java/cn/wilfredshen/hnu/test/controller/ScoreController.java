@@ -22,10 +22,10 @@ public class ScoreController {
     @Autowired
     ScoreService scoreService;
 
-    @GetMapping("/api/query/score")
+    @GetMapping("/api/get/score")
     @ResponseBody
-    public Result queryScore(String stuNo) {
-        List<Score> scores = scoreService.queryAll(stuNo);
+    public Result getScore(String stuNo) {
+        List<Score> scores = scoreService.findByStuNo(stuNo);
         if (scores != null) {
             return ResultFactory.buildSuccessResult(scores);
         } else {

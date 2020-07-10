@@ -5,8 +5,8 @@
 
 <mapper namespace="cn.wilfredshen.hnu.test.mapper.ScoreMapper">
 
-    <select id="findScoreByStuNo" parameterType="java.lang.String" resultType="cn.wilfredshen.hnu.test.entity.Score">
-        select * from score where stu_no = #{stuNo}
+    <select id="findByStuNo" parameterType="java.lang.String" resultType="cn.wilfredshen.hnu.test.entity.Score">
+        select * from score where stu_no = #{stuNo};
     </select>
 
 </mapper>

@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface ScoreService {
 
-    List<Score> queryAll(String stuNo);
+    List<Score> findByStuNo(String stuNo);
 }

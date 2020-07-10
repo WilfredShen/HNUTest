@@ -18,9 +18,9 @@ public class ScoreServiceImpl implements ScoreService {
     ScoreMapper scoreMapper;
 
     @Override
-    public List<Score> queryAll(String stuNo) {
+    public List<Score> findByStuNo(String stuNo) {
         try {
-            return scoreMapper.findScoreByStuNo(stuNo);
+            return scoreMapper.findByStuNo(stuNo);
         } catch (Exception e) {
             e.printStackTrace();
         }
