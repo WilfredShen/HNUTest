@@ -6,11 +6,11 @@
 <mapper namespace="cn.wilfredshen.hnu.test.mapper.StudentMapper">
     <insert id="insert" parameterType="cn.wilfredshen.hnu.test.entity.Student">
         insert ignore into student (id, stu_no, stu_name, sexde, birth, department, addr)
-            values (#{id}, #{stuNo}, #{stuName}, #{sexde}, #{brith}, #{department}, #{addr});
+            values (#{id}, #{stuNo}, #{stuName}, #{sexde}, #{birth}, #{department}, #{addr});
     </insert>
     <insert id="insertWithoutId" parameterType="cn.wilfredshen.hnu.test.entity.Student">
         insert ignore into student (stu_no, stu_name, sexde, birth, department, addr)
-            values (#{stuNo}, #{stuName}, #{sexde}, #{brith}, #{department}, #{addr});
+            values (#{stuNo}, #{stuName}, #{sexde}, #{birth}, #{department}, #{addr});
     </insert>
 
     <delete id="deleteById" parameterType="java.lang.Integer">
