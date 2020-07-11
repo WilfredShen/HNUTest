@@ -5,6 +5,10 @@ package cn.wilfredshen.hnu.test.result;
  */
 public class ResultFactory {
 
+    public static Result buildSuccessResult() {
+        return new Result(ResultCodeEnum.SUCCESS, "success", null);
+    }
+
     public static Result buildSuccessResult(Object data) {
         return new Result(ResultCodeEnum.SUCCESS, "success", data);
     }
@@ -15,5 +19,13 @@ public class ResultFactory {
 
     public static Result buildFailResult(String message) {
         return new Result(ResultCodeEnum.FAIL, message);
+    }
+
+    public static Result buildFailResult(ResultCodeEnum codeEnum, String message, Object data) {
+        return new Result(codeEnum, message, data);
+    }
+
+    public static Result buildFailResult(String message, Object data) {
+        return new Result(ResultCodeEnum.FAIL, message, data);
     }
 }

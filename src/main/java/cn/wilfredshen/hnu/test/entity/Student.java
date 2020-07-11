@@ -11,7 +11,7 @@ public class Student {
     private String stuNo;
     private String stuName;
     private String sexde;
-    private Date brith;
+    private Date birth;
     private String department;
     private String addr;
 
@@ -47,12 +47,12 @@ public class Student {
         this.sexde = sexde;
     }
 
-    public Date getBrith() {
-        return brith;
+    public Date getBirth() {
+        return birth;
     }
 
-    public void setBrith(Date brith) {
-        this.brith = brith;
+    public void setBirth(Date birth) {
+        this.birth = birth;
     }
 
     public String getDepartment() {
@@ -69,5 +69,18 @@ public class Student {
 
     public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", stuNo='" + stuNo + '\'' +
+                ", stuName='" + stuName + '\'' +
+                ", sexde='" + sexde + '\'' +
+                ", birth=" + birth +
+                ", department='" + department + '\'' +
+                ", addr='" + addr + '\'' +
+                '}';
     }
 }

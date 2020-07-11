@@ -4,9 +4,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.wilfredshen.hnu.test.mapper.StudentMapper">
+    <insert id="insert" parameterType="cn.wilfredshen.hnu.test.entity.Student">
+        insert ignore into student (id, stu_no, stu_name, sexde, birth, department, addr)
+            values (#{id}, #{stuNo}, #{stuName}, #{sexde}, #{brith}, #{department}, #{addr});
+    </insert>
+    <insert id="insertWithoutId" parameterType="cn.wilfredshen.hnu.test.entity.Student">
+        insert ignore into student (stu_no, stu_name, sexde, birth, department, addr)
+            values (#{stuNo}, #{stuName}, #{sexde}, #{brith}, #{department}, #{addr});
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from student
+            where id = #{id} limit 1;
+    </delete>
+
+    <update id="updateById" parameterType="cn.wilfredshen.hnu.test.entity.Student">
+        update student
+            set stu_no = #{stuNo},
+                stu_name = #{stuName},
+                sexde = #{sexde},
+                birth = #{birth},
+                department = #{department},
+                addr = #{addr}
+            where id = #{id} limit 1;
+    </update>
 
     <select id="findByStuNo" parameterType="java.lang.String" resultType="cn.wilfredshen.hnu.test.entity.Student">
-        select * from student where stu_no = #{stuNo} LIMIT 1;
+        select * from student where stu_no = #{stuNo} limit 1;
     </select>
 
 </mapper>

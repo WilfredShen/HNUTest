@@ -41,4 +41,14 @@ public class Score {
     public void setGrade(Integer grade) {
         this.grade = grade;
     }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "scoreId=" + scoreId +
+                ", stuNo='" + stuNo + '\'' +
+                ", cName='" + cName + '\'' +
+                ", grade=" + grade +
+                '}';
+    }
 }

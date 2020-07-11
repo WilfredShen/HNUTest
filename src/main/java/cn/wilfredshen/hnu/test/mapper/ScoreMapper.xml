@@ -4,9 +4,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.wilfredshen.hnu.test.mapper.ScoreMapper">
+    <insert id="insert" parameterType="cn.wilfredshen.hnu.test.entity.Score">
+        insert class_origin into score (score_id, stu_no, c_name, grade)
+            values (#{scoreId}, #{stuNo}, #{cName}, #{grade});
+    </insert>
+    <insert id="insertWithoutScoreId" parameterType="cn.wilfredshen.hnu.test.entity.Score">
+        insert into score (stu_no, c_name, grade)
+            values (#{stuNo}, #{cName}, #{grade});
+    </insert>
+
+    <delete id="deleteByScoreId" parameterType="java.lang.Integer">
+        delete from score
+            where score_id = #{scoreId} limit 1;
+    </delete>
+
+    <update id="updateByScoreId" parameterType="cn.wilfredshen.hnu.test.entity.Score">
+        update score
+            set stu_no = #{stuNo}, c_name = #{cName}, grade = #{grade}
+            where score_id = #{scoreId} limit 1;
+    </update>
 
     <select id="findByStuNo" parameterType="java.lang.String" resultType="cn.wilfredshen.hnu.test.entity.Score">
-        select * from score where stu_no = #{stuNo};
+        select * from score
+            where stu_no = #{stuNo};
+    </select>
+    <select id="exists" parameterType="java.lang.Integer" resultType="java.lang.Boolean">
+        select * from score
+            where score_id = #{scoreId} limit 1;
     </select>
 
 </mapper>
