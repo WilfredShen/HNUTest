@@ -1,5 +1,7 @@
 # HNUTest
 
+SSM 框架，使用 Maven 进行依赖管理。
+
 `student` 表与 `score` 表通过 `stu_no` 字段建立外键约束，`student` 表为主表。
 
 ```mysql
